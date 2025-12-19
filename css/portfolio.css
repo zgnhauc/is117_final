@@ -183,9 +183,27 @@ body{
 /* Methodology */
 .methodology{margin-top:40px;animation: fadeInUp 0.8s ease-out}
 .methodology h2{animation: slideInLeft 0.8s ease-out}
-.methodology .two-col > div{animation: fadeInUp 0.8s ease-out both}
-.methodology .two-col > div:nth-child(1){animation-delay: 0.2s}
-.methodology .two-col > div:nth-child(2){animation-delay: 0.3s}
+.methodology-layout{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.methodology-content{animation: slideInLeft 0.8s ease-out}
+.methodology-content > div{animation: fadeInUp 0.8s ease-out both}
+.methodology-content > div:nth-child(1){animation-delay: 0.2s}
+.methodology-content > div:nth-child(2){animation-delay: 0.3s}
+.methodology-image{animation: slideInRight 0.8s ease-out;overflow:hidden;border-radius:12px;box-shadow:0 20px 40px rgba(255,107,138,0.15)}
+.methodology-image img{width:100%;height:auto;display:block;transition:transform 0.3s ease}
+.methodology-image:hover img{transform:scale(1.05)}
+
+/* Projects */
+.work-section h2{animation: slideInLeft 0.8s ease-out}
+.projects-layout{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.project-item{display:flex;flex-direction:column;animation:fadeInUp 0.8s ease-out both;transition:all 0.3s ease}
+.project-item:nth-child(1){animation-delay:0.2s}
+.project-item:nth-child(2){animation-delay:0.3s}
+.project-item:hover{transform:translateY(-8px)}
+.project-image{overflow:hidden;border-radius:12px;margin-bottom:20px;height:280px;box-shadow:0 10px 30px rgba(255,107,138,0.12)}
+.project-image img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease}
+.project-item:hover .project-image img{transform:scale(1.08)}
+.project-content h4{font-size:18px;margin:0 0 12px;color:var(--accent)}
+.project-content p{font-size:14px;line-height:1.6;color:#666}
 
 /* Consult / Calendly */
 .consultation{background: linear-gradient(120deg,var(--bg1),var(--bg2));color:#222;padding:24px 0;margin-top:44px;animation: fadeInDown 0.8s ease-out}
@@ -224,6 +242,8 @@ body{
   .two-col{grid-template-columns:1fr}
   .service, .art-piece {animation: none}
   .service:nth-child(1), .art-piece:nth-child(1){animation: fadeInUp 0.8s ease-out}
+  .methodology-layout{grid-template-columns:1fr}
+  .projects-layout{grid-template-columns:1fr}
 }
 
 @media (max-width:768px){
@@ -306,4 +326,96 @@ h2{letter-spacing:0.6px}
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
   margin-top: 20px;
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 8px;
+  gap: 6px;
+  z-index: 101;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #111;
+  border-radius: 3px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(10px, 10px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+  transform: translateX(-10px);
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Mobile Navigation */
+#mobile-nav {
+  display: flex;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .site-nav {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    flex-direction: column;
+    gap: 0;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  }
+
+  .site-nav.active {
+    max-height: 500px;
+  }
+
+  .site-nav a {
+    padding: 15px 20px;
+    border-bottom: 1px solid rgba(255, 107, 138, 0.1);
+    animation: none !important;
+    display: block;
+  }
+
+  .site-nav a:last-child {
+    border-bottom: none;
+  }
+
+  .site-nav a::after {
+    display: none;
+  }
+
+  .site-nav a:hover {
+    background: rgba(255, 107, 138, 0.08);
+    padding-left: 25px;
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card.single {
+    grid-column: 1;
+  }
 }
