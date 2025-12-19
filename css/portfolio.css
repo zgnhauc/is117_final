@@ -194,12 +194,13 @@ body{
 .calendly-inline-widget{width:820px;height:820px;max-width:100%;border-radius:8px;overflow:hidden;border:1px solid rgba(0,0,0,0.06);animation: fadeInUp 1s ease-out 0.3s both;transition: transform 0.3s ease}
 .calendly-inline-widget:hover{transform: scale(1.02)}
 /* Contact */
-.contact-section{margin:60px 0;animation: fadeInUp 0.8s ease-out}
-.contact-grid{display:flex; flex-direction:column; align-items:center}
-.contact-intro{text-align:center;animation: fadeInDown 0.8s ease-out}
+.contact-section{margin:0;animation: fadeInUp 0.8s ease-out;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:60px 20px;width:100%}
+.contact-section .container{display:flex;align-items:center;justify-content:center;width:100%}
+.contact-grid{display:flex; flex-direction:column; align-items:center;width:100%;max-width:600px;text-align:center}
+.contact-intro{text-align:center;animation: fadeInDown 0.8s ease-out;margin-bottom:30px}
 .contact-intro h3{font-size:28px;margin:0 0 8px;text-align:center;font-family:Poppins, Inter, sans-serif}
-.contact-intro p{text-align:center}
-.contact-form{display:flex;flex-direction:column;animation: slideInRight 0.8s ease-out}
+.contact-intro p{text-align:center;margin:0}
+.contact-form{display:flex;flex-direction:column;animation: slideInRight 0.8s ease-out;width:100%}
 .contact-form label{font-size:13px;margin:8px 0 6px}
 .contact-form input,.contact-form textarea{padding:10px;border:1px solid #ddd;border-radius:4px;transition: all 0.3s ease;background: linear-gradient(90deg, #fff 0%, #ffeef6 100%)}
 .contact-form input:focus,.contact-form textarea:focus{outline: none;border-color: var(--accent);box-shadow: 0 0 8px rgba(255, 107, 138, 0.3);transform: scale(1.02)}
@@ -236,7 +237,8 @@ body{
 }
 
 @media (min-width:769px){
-  .contact-grid{display:grid; grid-template-columns:auto 520px; gap:28px; align-items:start; justify-content:center}
+  .contact-grid{display:flex; flex-direction:column; gap:28px; align-items:center; justify-content:center}
+  .contact-form-wrap{width:100%}
 }
 
 @media (max-width:480px){
