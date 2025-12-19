@@ -101,6 +101,36 @@ body{
   .three-col{grid-template-columns:1fr}
   .presentation-slide{padding:30px 0}
   .examples-grid{grid-template-columns: repeat(auto-fit, minmax(250px, 1fr))}
+  
+  /* Cartoon page responsive */
+  #cartoon-page .design-hero {
+    border-radius: 15px;
+    padding: 30px 20px;
+    margin: 20px;
+    border: 2px dashed #ff6b8a;
+  }
+  #cartoon-page .display-title {
+    font-size: 48px;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 0 rgba(255, 107, 138, 0.3);
+  }
+  #cartoon-page .gallery {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  #cartoon-page .tile {
+    font-size: 16px;
+    padding: 12px;
+  }
+  #cartoon-page .presentation-slide {
+    border-radius: 12px;
+    padding: 25px 20px;
+    margin: 15px 0;
+    border-left: 4px solid #FF6B8A;
+  }
+  #cartoon-page .presentation-slide h2 {
+    font-size: 24px;
+  }
 }
 
 @media (max-width:480px){
@@ -112,6 +142,74 @@ body{
   .services-grid{grid-template-columns:1fr}
   .artwork-grid{grid-template-columns:1fr}
   .contact-form button{align-self:stretch}
+  
+  /* Cartoon page responsive - small screens */
+  #cartoon-page {
+    background: linear-gradient(135deg, #FFD6E7 0%, #FFB6D9 25%, #FFC7E0 50%, #FFE5F0 75%, #FFF0F6 100%);
+  }
+  #cartoon-page .design-hero {
+    border-radius: 12px;
+    padding: 20px 15px;
+    margin: 15px;
+    border: 2px dashed #ff6b8a;
+  }
+  #cartoon-page .display-title {
+    font-size: 36px;
+    line-height: 1;
+    letter-spacing: 0.5px;
+    text-shadow: 2px 2px 0 rgba(255, 107, 138, 0.3);
+  }
+  #cartoon-page .gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 20px;
+  }
+  #cartoon-page .tile {
+    font-size: 14px;
+    padding: 10px;
+    border-radius: 12px;
+  }
+  #cartoon-page .design-intro p {
+    font-size: 14px;
+  }
+  #cartoon-page .muted {
+    font-size: 12px;
+  }
+  #cartoon-page .presentation-slide {
+    border-radius: 10px;
+    padding: 20px 15px;
+    margin: 12px 0;
+    border-left: 3px solid #FF6B8A;
+  }
+  #cartoon-page .presentation-slide h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+  #cartoon-page .presentation-slide p,
+  #cartoon-page .presentation-slide ul {
+    font-size: 13px;
+  }
+  #cartoon-page .three-col {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  #cartoon-page .three-col h4 {
+    font-size: 16px;
+  }
+  #cartoon-page .three-col p {
+    font-size: 13px;
+  }
+  #cartoon-page .examples-grid {
+    grid-template-columns: 1fr;
+  }
+  #cartoon-page .example {
+    border-radius: 12px;
+    padding: 12px;
+  }
+  #cartoon-page .example img {
+    border-radius: 8px;
+  }
 }
 
 /* Headings */
@@ -140,6 +238,88 @@ h2{letter-spacing:0.6px}
 }
 #bauhaus-page .muted {
   color: #666;
+}
+
+/* Cartoon page specific styles */
+#cartoon-page {
+  background: linear-gradient(135deg, #FFD6E7 0%, #FFB6D9 25%, #FFC7E0 50%, #FFE5F0 75%, #FFF0F6 100%);
+  color: #333;
+  min-height: 100vh;
+}
+#cartoon-page .design-hero {
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(255, 107, 138, 0.2);
+  border: 3px dashed #ff6b8a;
+}
+#cartoon-page .display-title {
+  color: #FF1D77;
+  font-weight: 900;
+  text-shadow: 3px 3px 0 rgba(255, 107, 138, 0.3);
+  letter-spacing: 2px;
+}
+#cartoon-page .tile {
+  background: linear-gradient(135deg, #FF6B8A 0%, #FF89A5 100%);
+  color: #fff;
+  border-radius: 15px;
+  transform: rotate(-2deg);
+  box-shadow: 0 8px 15px rgba(255, 107, 138, 0.3);
+  font-weight: 700;
+  font-size: 18px;
+  transition: transform 0.3s ease;
+}
+#cartoon-page .tile:hover {
+  transform: rotate(2deg) scale(1.05);
+}
+#cartoon-page .muted {
+  color: #FF6B8A;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+}
+#cartoon-page .presentation-slide {
+  background: rgba(255, 255, 255, 0.88);
+  border-radius: 15px;
+  padding: 40px 30px;
+  margin: 20px auto;
+  border-left: 5px solid #FF6B8A;
+  box-shadow: 0 8px 20px rgba(255, 107, 138, 0.15);
+  max-width: 800px;
+}
+#cartoon-page .presentation-slide h2 {
+  color: #FF1D77;
+  font-size: 32px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+#cartoon-page .presentation-slide ul li {
+  line-height: 1.8;
+  color: #444;
+}
+#cartoon-page .example {
+  background: #fff;
+  border-radius: 15px;
+  padding: 15px;
+  box-shadow: 0 8px 20px rgba(255, 107, 138, 0.15);
+  border: 2px solid #FFB6D9;
+  transition: transform 0.3s ease;
+}
+#cartoon-page .example:hover {
+  transform: translateY(-5px);
+}
+#cartoon-page .example img {
+  border-radius: 12px;
+  border: none;
+  width: 100%;
+  height: auto;
+}
+#cartoon-page .example p {
+  color: #333;
+  font-size: 15px;
+  line-height: 1.6;
+}
+#cartoon-page .example p strong {
+  color: #FF1D77;
 }
 
 /* Presentation slides */
